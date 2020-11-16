@@ -8,8 +8,8 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.string :description
       t.string :thumbnail
       t.string :image
-      t.string :category
       t.integer :stock
+      t.references :category
 
       t.timestamps
     end
