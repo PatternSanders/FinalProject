@@ -4,5 +4,5 @@ json.url product_path(product)
 # json.image_url rails_blob_path(product.image, only_path: true)
 
 json.category do
-  json.partial!("categories/category.json.jbuilder", category: product.category)
+  json.partial!("categories/category", category: product.category)
 end
