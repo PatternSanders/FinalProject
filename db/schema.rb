@@ -104,9 +104,8 @@ ActiveRecord::Schema.define(version: 2020_11_18_003005) do
     t.float "price"
     t.float "weight"
     t.string "description"
-    t.string "thumbnail"
-    t.string "image"
     t.integer "stock"
+    t.boolean "on_sale"
     t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

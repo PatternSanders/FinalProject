@@ -6,9 +6,9 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.float :price
       t.float :weight
       t.string :description
-      t.string :thumbnail
-      t.string :image
       t.integer :stock
+      t.boolean :on_sale
+
       t.references :category
 
       t.timestamps

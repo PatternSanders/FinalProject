@@ -15,6 +15,13 @@ ActiveAdmin.register Product do
   #   permitted
   # end
 
-
+  form do |f|
+    f.semantic_errors
+    f.inputs
+    f.inputs do
+      f.input :image, as: :file
+    end
+    f.actions
+  end
 
 end
