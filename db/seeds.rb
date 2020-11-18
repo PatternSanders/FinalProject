@@ -48,3 +48,4 @@ product_list.each do |sku, name, price, weight, description, thumbnail, image, c
     category:    category
   )
 end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
