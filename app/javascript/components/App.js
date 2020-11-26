@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./Header";
+import Footer from "./Footer";
 import ProductGrid from "./ProductGrid";
 
 export default function App({products}) {
@@ -9,6 +10,7 @@ export default function App({products}) {
       <main>
         <ProductGrid products={products} />
       </main>
+      <Footer />
     </>
   );
 }

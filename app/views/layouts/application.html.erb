@@ -5,15 +5,17 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <%# <link rel="stylesheet" href="https://unpkg.com/mvp.css"> %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag 'index' %>
   </head>
 
   <body>
-    <div class="content">
-      <%= yield %>
-    </div>
+    <section class="container">
+      <div class="content">
+        <%= yield %>
+      </div>
+    </section>
   </body>
 </html>

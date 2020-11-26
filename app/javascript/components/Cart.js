@@ -10,7 +10,7 @@ export default function Cart() {
     cart.length !== 0 && (
       <ul>
         <li>
-          Cart <sup>{cart.length}</sup>
+        🛒Cart🛒 <sup>{cart.length}</sup>
           <ul>
             {cart.map((product) => (
               <li key={product.id}>

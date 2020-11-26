@@ -20,10 +20,10 @@ export default function AddRemoveCart({ product }) {
   }
 
   return cart_ids.includes(product.id) ? (
-    <button onClick={() => remove_from_cart(product.id)}>
+    <button class="button is-primary" onClick={() => remove_from_cart(product.id)}>
       ❌ Remove From Cart
     </button>
   ) : (
-    <button onClick={() => add_to_cart(product.id)}>➕ Add To Cart</button>
+    <button class="button is-primary" onClick={() => add_to_cart(product.id)}>➕ Add To Cart</button>
   );
 }
