@@ -21,15 +21,11 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'kaminari'
-# Use Active Storage variant
-gem 'image_processing'
-gem 'react-rails'
-gem 'inertia_rails'
-gem 'js-routes'
+# gem 'kaminari'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-gem "bulma-rails"
+
 gem 'activeadmin'
 gem 'devise'
 
@@ -57,3 +53,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Use Active Storage variant
+gem 'image_processing'
+gem 'react-rails'
+gem 'inertia_rails'
+gem "bulma-rails"
+gem 'js-routes'

@@ -16,3 +16,4 @@ class Product < ApplicationRecord
     collection.map(&:props)
   end
 end
+
