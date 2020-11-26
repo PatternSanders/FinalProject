@@ -14,7 +14,7 @@ export default function ProductGrid({ products }) {
               {product.name}
             </InertiaLink>
           </h3>
-          <p>Price: $ {product.price_cents / 100.0}</p>
+          <p>Price: $ {product.price}</p>
           <p>{product.description}</p>
           <AddRemoveCart product={product} />
         </aside>
