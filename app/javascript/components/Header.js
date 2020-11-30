@@ -1,9 +1,10 @@
 import React from "react";
 import Cart from "./Cart";
 import Search from "./Search";
+import CategoryPicker from "./CategoryPicker";
 // import { usePage } from "@inertiajs/inertia-react";
 
-export default function Header() {
+export default function Header({categories}) {
   return (
     <header>
       <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -16,6 +17,9 @@ export default function Header() {
         <div class="navbar-end">
           <div class="navbar-item">
             <Search />
+          </div>
+          <div class="navbar-item">
+            <CategoryPicker categories={categories} />
           </div>
           <div class="navbar-item">
             <Cart />

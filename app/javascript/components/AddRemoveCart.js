@@ -24,6 +24,8 @@ export default function AddRemoveCart({ product }) {
       ❌ Remove From Cart
     </button>
   ) : (
-    <button class="button is-primary" onClick={() => add_to_cart(product.id)}>➕ Add To Cart</button>
+    <button class="button is-primary" onClick={() => add_to_cart(product.id)}>
+      ➕ Add To Cart
+    </button>
   );
 }

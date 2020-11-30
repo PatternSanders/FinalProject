@@ -1,11 +1,13 @@
 class ProductsController < ApplicationController
   def index
     products = Product.prep_for_react(Product.all)
-    render inertia: "App", props: { products: products }
+    categories = Category.all.as_json
+    render inertia: "App", props: { products: products, categories: categories }
   end
 
   def show
     product = Product.find(params[:id]).props
-    render inertia: "App", props: { products: [product] }
+    categories = Category.all.as_json
+    render inertia: "App", props: { products: [product], categories: categories }
   end
 end

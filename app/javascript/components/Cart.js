@@ -21,6 +21,18 @@ export default function Cart() {
                 >
                   ❌
                 </InertiaLink>
+                {/* <InertiaLink
+                  href={Routes.cart_path(product_id, product.quantity)}
+                  method="put"
+                >
+                  🔼
+                </InertiaLink>
+                <InertiaLink
+                  href={Routes.cart_path(product_id, product.quantity)}
+                  method="put"
+                >
+                  🔽
+                </InertiaLink> */}
               </li>
             ))}
           </ul>
