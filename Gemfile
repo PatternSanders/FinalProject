@@ -60,3 +60,4 @@ gem 'react-rails'
 gem 'inertia_rails'
 gem "bulma-rails"
 gem 'js-routes'
+gem 'stripe'

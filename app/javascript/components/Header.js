@@ -24,8 +24,7 @@ export default function Header() {
       </nav>
 
       <div class="hero-body">
-        <div class="container">
-          <div class="cloumns is-centered">
+          <div class="columns is-centered">
             <div class="column is-half">
               <h1 class="title">
                 Drugs R' Us
@@ -34,7 +33,6 @@ export default function Header() {
                 We make money off a pandemic
               </h2>
             </div>
-          </div>
         </div>
       </div>
     </header>

@@ -16,29 +16,27 @@ export default function ProductGrid({ products }) {
                 </figure>
               </div>
               <div class="card-content">
-                  <p class="title is-4">
-                    <InertiaLink href={Routes.product_path(product.id)}>
-                      {product.name}
-                    </InertiaLink>
-                  </p>
-                  <div class="media">
-                  {product.on_sale == true &&
-                    <div class="notification is-danger is-light">
-                      <p class="subtitle is-4">ON SALE!</p>
-                    </div>
-                  }
-                  <br />
-                  <p>Price: ${product.price}</p>
-                  <br />
-                  <p>Stock: {product.stock}</p>
-                  <br />
-                  <p>Category: {product.category}</p>
+                <p class="title is-4">
+                  <InertiaLink href={Routes.product_path(product.id)}>
+                    {product.name}
+                  </InertiaLink>
+                </p>
+                <div class="media">
+                {product.on_sale == true &&
+                  <div class="notification is-danger is-light">
+                    <p class="subtitle is-4">ON SALE!</p>
+                  </div>
+                }
                 </div>
+                <p>Price: ${product.price}</p>
+                <p>Stock: {product.stock}</p>
+                <p>Category: {product.category}</p>
               </div>
-              <AddRemoveCart product={product} />
+
               <div class="content">
                 <p>{product.description}</p>
               </div>
+              <AddRemoveCart product={product} />
             </div>
           </div>
         ))}
