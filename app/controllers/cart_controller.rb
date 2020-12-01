@@ -1,7 +1,12 @@
 class CartController < ApplicationController
   def create
     id = params[:id].to_i
-    session[:cart] << id unless session[:cart].include?(id)
+
+    unless session[:cart].include?(id)
+      session[:cart] << id
+      flash[:notice] = "Item added to cart."
+    end
+
     redirect_to root_path
   end
 

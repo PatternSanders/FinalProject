@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :initialize_session
   after_action :add_csrf_token
+  helper_method :cart
 
   inertia_share do
     {
@@ -16,5 +17,9 @@ class ApplicationController < ActionController::Base
 
   def initialize_session
     session[:cart] ||= [] # Empty cart is an empty array.
+  end
+
+  def cart
+    Product.find(session[:cart])
   end
 end

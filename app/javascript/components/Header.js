@@ -18,9 +18,9 @@ export default function Header({categories}) {
           <div class="navbar-item">
             <Search />
           </div>
-          <div class="navbar-item">
+          {/* <div class="navbar-item">
             <CategoryPicker categories={categories} />
-          </div>
+          </div> */}
           <div class="navbar-item">
             <Cart />
           </div>

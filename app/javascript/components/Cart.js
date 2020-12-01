@@ -2,9 +2,14 @@ import React from "react";
 import { usePage } from "@inertiajs/inertia-react";
 import { InertiaLink } from "@inertiajs/inertia-react";
 import Routes from "../routes.js.erb";
+import { Inertia } from "@inertiajs/inertia";
 
 export default function Cart() {
   const { cart } = usePage().props;
+
+  function checkout() {
+
+  }
 
   return (
     cart.length !== 0 && (
@@ -36,6 +41,11 @@ export default function Cart() {
               </li>
             ))}
           </ul>
+        </li>
+        <li>
+          <InertiaLink
+            href="checkout/create"
+            method="post">💳Checkout💳</InertiaLink>
         </li>
       </ul>
     )
