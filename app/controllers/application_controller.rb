@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :initialize_session
   after_action :add_csrf_token
   helper_method :cart
+  respond_to :js
 
   inertia_share do
     {

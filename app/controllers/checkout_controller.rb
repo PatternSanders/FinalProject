@@ -36,7 +36,7 @@ class CheckoutController < ApplicationController
     )
 
     respond_to do |format|
-      format.js { render "create.js.erb" } # render create.js.erb
+      format.json { render json: { publishable_key: Rails.configuration.stripe[:publishable_key], session_id: @session.id } }
     end
   end
 
@@ -45,7 +45,5 @@ class CheckoutController < ApplicationController
     @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
   end
 
-  def cancel
-
-  end
+  def cancel; end
 end

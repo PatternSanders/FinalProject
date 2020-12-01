@@ -3,12 +3,34 @@ import { usePage } from "@inertiajs/inertia-react";
 import { InertiaLink } from "@inertiajs/inertia-react";
 import Routes from "../routes.js.erb";
 import { Inertia } from "@inertiajs/inertia";
+import Axios from "axios";
 
 export default function Cart() {
   const { cart } = usePage().props;
 
-  function checkout() {
-
+  async function checkout() {
+    const options = {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', 'Accept': 'application/json'},
+      data: JSON.stringify({}),
+      url: "/checkout/create"
+    }
+    Axios(options)
+    // .then(response => response.json())
+    .then(function (response) {
+      const publishable_key = response.data.publishable_key;
+      const session_id = response.data.session_id;
+      const stripe = Stripe(publishable_key);
+      stripe.redirectToCheckout({
+        sessionId: session_id
+      })
+      .then(function(result) {
+        console.log(result.error.message);
+      });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
   return (
@@ -43,9 +65,10 @@ export default function Cart() {
           </ul>
         </li>
         <li>
-          <InertiaLink
+          {/* <InertiaLink
             href="checkout/create"
-            method="post">💳Checkout💳</InertiaLink>
+            method="post">💳Checkout💳</InertiaLink> */}
+            <button class="button is-small" onClick={checkout}>💳Checkout💳</button>
         </li>
       </ul>
     )
