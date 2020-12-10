@@ -2,8 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :initialize_session
   after_action :add_csrf_token
   helper_method :cart
-  respond_to :js
-
+  respond_to? :html
   inertia_share do
     {
       cart: Product.find(session[:cart])

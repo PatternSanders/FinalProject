@@ -4,6 +4,9 @@ class Product < ApplicationRecord
   belongs_to :category
   has_one_attached :image
 
+  validates :sku, :name, :description, :on_sale, presence: true
+  validates :price, :weight, :stock, presence: true, numericality: true
+
   def image_url
     rails_blob_path(image, only_path: true)
   end

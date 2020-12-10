@@ -16,3 +16,16 @@ form {
 nav ul li ul li a {
   display: inline;
 }
+
+.content ul {
+  list-style-type: none;
+  background-color: #00d1b2;
+}
+
+.content ul ul {
+  list-style-type: none;
+}
+
+.content ul li {
+  color: white;
+}

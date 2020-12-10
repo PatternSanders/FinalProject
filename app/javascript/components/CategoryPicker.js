@@ -1,20 +1,18 @@
 import React from "react";
-import { Inertia } from "@inertiajs/inertia";
-import { usePage } from "@inertiajs/inertia-react";
 import Routes from "../routes.js.erb";
+import { InertiaLink } from "@inertiajs/inertia-react";
 
 export default function CategoryPicker({ categories }) {
+
   return (
-    <div class="control">
-      <div class="select">
-        <select>
+    <>
+      <div>
         {categories.map((category) => (
-          <InertiaLink href={Routes.category_path(category.id)}>
-            <option>{category.name}</option>
+          <InertiaLink className="button is-small is-primary" href={Routes.category_path(category.id)}>
+            {category.name}
           </InertiaLink>
         ))}
-        </select>
       </div>
-    </div>
+    </>
   );
 }

@@ -42,7 +42,26 @@ class CheckoutController < ApplicationController
 
   def success
     @session = Stripe::Checkout::Session.retrieve(params[:session_id])
+    line_items = Stripe::Checkout::Session.list_line_items(params[:session_id])
     @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
+
+    order = Order.create(
+      shipping_address: @session.shipping_address_collection,
+      order_date: Time.now,
+      status: @session.payment_status
+    )
+
+    line_items.data.each do |item|
+      if(!item.description.include? "government")
+        product = Product.find_by(description: item.description)
+        OrderDetail.create(
+          order_id:   order.id,
+          product_id: product.id,
+          price:      item.amount_total * 100
+        )
+      end
+    end
+    session[:cart] = nil
   end
 
   def cancel; end

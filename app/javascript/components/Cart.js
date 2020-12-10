@@ -35,42 +35,27 @@ export default function Cart() {
 
   return (
     cart.length !== 0 && (
-      <ul>
-        <li>
-        🛒Cart🛒 <sup>{cart.length}</sup>
-          <ul>
-            {cart.map((product) => (
-              <li key={product.id}>
-                {product.name}{" "}
-                <InertiaLink
-                  href={Routes.cart_path(product.id)}
-                  method="delete"
-                >
-                  ❌
-                </InertiaLink>
-                {/* <InertiaLink
-                  href={Routes.cart_path(product_id, product.quantity)}
-                  method="put"
-                >
-                  🔼
-                </InertiaLink>
-                <InertiaLink
-                  href={Routes.cart_path(product_id, product.quantity)}
-                  method="put"
-                >
-                  🔽
-                </InertiaLink> */}
-              </li>
-            ))}
-          </ul>
-        </li>
-        <li>
-          {/* <InertiaLink
-            href="checkout/create"
-            method="post">💳Checkout💳</InertiaLink> */}
+        <ul>
+          <li>
+          🛒Cart🛒 <sup>{cart.length}</sup>
+            <ul>
+              {cart.map((product) => (
+                <li key={product.id}>
+                  {product.name}{" "}
+                  <InertiaLink
+                    href={Routes.cart_path(product.id)}
+                    method="delete"
+                  >
+                    ❌
+                  </InertiaLink>
+                </li>
+              ))}
+            </ul>
+          </li>
+          <li>
             <button class="button is-small" onClick={checkout}>💳Checkout💳</button>
-        </li>
-      </ul>
+          </li>
+        </ul>
     )
   );
 }
