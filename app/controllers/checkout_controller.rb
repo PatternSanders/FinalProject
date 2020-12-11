@@ -47,8 +47,8 @@ class CheckoutController < ApplicationController
 
     order = Order.create(
       shipping_address: @session.shipping_address_collection,
-      order_date: Time.now,
-      status: @session.payment_status
+      status:           @session.payment_status,
+      amount:           @payment_intent.amount * 100
     )
 
     line_items.data.each do |item|
@@ -61,10 +61,6 @@ class CheckoutController < ApplicationController
         )
       end
     end
-
-    Customer.create!(
-
-    )
 
     session[:cart] = nil
   end

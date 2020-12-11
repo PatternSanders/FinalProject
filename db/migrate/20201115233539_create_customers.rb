@@ -8,7 +8,7 @@ class CreateCustomers < ActiveRecord::Migration[6.0]
       t.string :default_shipping_address
       t.string :province
       t.string :phone
-      t.references :order_details
+      t.references :order_detail
 
       t.timestamps
     end
