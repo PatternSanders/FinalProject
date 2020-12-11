@@ -6,33 +6,33 @@ import CategoryPicker from "./CategoryPicker";
 export default function Header({categories}) {
   return (
     <header>
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <div class="navbar-start">
-            <h1><a class="navbar-item" href="/">Drugs R' Us</a></h1>
+      <nav className="navbar" role="navigation" aria-label="main navigation">
+        <div className="navbar-brand">
+          <div className="navbar-start">
+            <h1><a className="navbar-item" href="/">Drugs R' Us</a></h1>
           </div>
         </div>
 
-        <div class="navbar-end">
-          <div class="navbar-item">
+        <div className="navbar-end">
+          <div className="navbar-item">
             <Search />
           </div>
-          <div class="navbar-item">
+          <div className="navbar-item">
             <CategoryPicker categories={ categories } />
           </div>
-          <div class="navbar-item">
+          <div className="navbar-item">
             <Cart />
           </div>
         </div>
       </nav>
 
-      <div class="hero-body">
-          <div class="columns is-centered">
-            <div class="column is-half">
-              <h1 class="title">
+      <div className="hero-body">
+          <div className="columns is-centered">
+            <div className="column is-half">
+              <h1 className="title">
                 Drugs R' Us
               </h1>
-              <h2 class="subtitle">
+              <h2 className="subtitle">
                 We make money off a pandemic
               </h2>
             </div>

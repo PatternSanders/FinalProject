@@ -6,13 +6,15 @@ export default function CategoryPicker({ categories }) {
 
   return (
     <>
-      <div>
+
         {categories.map((category) => (
-          <InertiaLink className="button is-small is-primary" href={Routes.category_path(category.id)}>
-            {category.name}
-          </InertiaLink>
+          <div key={category.id}>
+            <InertiaLink className="button is-small is-primary" href={Routes.category_path(category.id)}>
+              {category.name}
+            </InertiaLink>
+          </div>
         ))}
-      </div>
+
     </>
   );
 }

@@ -53,7 +53,7 @@ export default function Cart() {
             </ul>
           </li>
           <li>
-            <button class="button is-small" onClick={checkout}>💳Checkout💳</button>
+            <button className="button is-small" onClick={checkout}>💳Checkout💳</button>
           </li>
         </ul>
     )
