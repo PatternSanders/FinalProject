@@ -35,8 +35,8 @@ export default function ProductGrid({ products }) {
 
               <div class="content">
                 <p>{product.description}</p>
+                <AddRemoveCart product={product} />
               </div>
-              <AddRemoveCart product={product} />
             </div>
           </div>
         ))}

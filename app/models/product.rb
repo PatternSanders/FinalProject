@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   belongs_to :category
   has_one_attached :image
 
-  validates :sku, :name, :description, :on_sale, presence: true
+  validates :sku, :name, :description, presence: true
   validates :price, :weight, :stock, presence: true, numericality: true
 
   def image_url

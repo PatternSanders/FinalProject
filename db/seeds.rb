@@ -8,18 +8,17 @@
 
 Product.destroy_all
 Category.destroy_all
-# ProductCategory.destroy_all
 
-# category_list = [
-#   ["Allergies"],
-#   ["Sleep Aid"],
-#   ["Pain Relief"],
-#   ["Indegestion"]
-# ]
+category_list = [
+  ["Allergies"],
+  ["Sleep Aid"],
+  ["Pain Relief"],
+  ["Indegestion"]
+]
 
-# category_list.each do |name|
-#   Category.create!(name: name)
-# end
+category_list.each do |name|
+  Category.create!(name: name)
+end
 
 product_list = [
   ["0000001", "Tylenol", "4.99", "1", "Tylenol is a pain reliever and a fever reducer. Tylenol is used to treat many conditions such as headache, muscle aches, arthritis, backache, toothaches, sore throats, colds, flu, and fevers.", "Pain Relief", "5000", "false"],
@@ -47,4 +46,29 @@ product_list.each do |sku, name, price, weight, description, category_name, stoc
     on_sale:     on_sale
   )
 end
+
+province_list = [
+  ["Ontario", 0.13, "K"],
+  ["Quebec", 0.15, "G"],
+  ["Nova Scotia", 0.12, "B"],
+  ["New Brunswick", 0.15, "E"],
+  ["Manitoba", 0.12, "R"],
+  ["British Columbia", 0.12, "V"],
+  ["Prince Edward Island", 0.15, "C"],
+  ["Saskatchewan", 0.11, "S"],
+  ["Alberta", 0.05, "T"],
+  ["Nunavut", 0.05, "X"],
+  ["Newfoundland", 0.15, "A"],
+  ["North West Territories", 0.05, "X"],
+  ["Yukon", 0.05, "Y"]
+]
+
+province_list.each do |name, tax_rate, postal_code|
+  Province.create!(
+    name:        name,
+    tax_rate:    tax_rate,
+    postal_code: postal_code
+  )
+end
+
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

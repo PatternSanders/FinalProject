@@ -17,13 +17,13 @@ class CheckoutController < ApplicationController
           currency:    "cad",
           quantity:    1
       })
-      cart_taxes += (product.price * 100) * 0.05
+      cart_taxes += (product.price * 0.05)
     end
 
     cart_json.push({
       name:        "GST",
       description: "The government will come after us if we dont pay this",
-      amount:      number_with_precision(cart_taxes * 100, precision: 2, strip_insignificant_zeros: true),
+      amount:      number_with_precision(cart_taxes * 100, precision: 0, strip_insignificant_zeros: true),
       currency:    "cad",
       quantity:    1
     })
@@ -61,6 +61,11 @@ class CheckoutController < ApplicationController
         )
       end
     end
+
+    Customer.create!(
+
+    )
+
     session[:cart] = nil
   end
 
