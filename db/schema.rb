@@ -66,8 +66,10 @@ ActiveRecord::Schema.define(version: 2020_12_11_165529) do
     t.string "default_shipping_address"
     t.string "province"
     t.string "phone"
+    t.integer "order_details_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_details_id"], name: "index_customers_on_order_details_id"
   end
 
   create_table "order_details", force: :cascade do |t|
