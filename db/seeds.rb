@@ -72,3 +72,4 @@ province_list.each do |name, tax_rate, postal_code|
 end
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'patternsanders@gmail.com', password: 'lumebrjack', password_confirmation: 'lumberjack') if Rails.env.production?
